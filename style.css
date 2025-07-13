@@ -1,4 +1,17 @@
-/* General Reset */
+/* === Root CSS Variables === */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --text-color: #333;
+  --bg-light: #f4f6f8;
+  --header-bg: #ffffff;
+  --hero-bg: #e8f0fe;
+  --font-stack: 'Segoe UI', sans-serif;
+  --spacing: 20px;
+  --radius: 8px;
+}
+
+/* === General Reset === */
 * {
   margin: 0;
   padding: 0;
@@ -6,46 +19,46 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  font-family: var(--font-stack);
+  background-color: var(--bg-light);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-/* Header */
+/* === Header === */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #ffffff;
+  padding: var(--spacing) calc(var(--spacing) * 2);
+  background-color: var(--header-bg);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .nav a {
-  margin-left: 20px;
+  margin-left: var(--spacing);
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
 }
 
 .nav a:hover {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
-/* Hero Section */
+/* === Hero Section === */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 60px 40px;
-  background-color: #e8f0fe;
+  padding: 60px calc(var(--spacing) * 2);
+  background-color: var(--hero-bg);
 }
 
 .hero-text {
@@ -67,15 +80,15 @@ body {
 .cta-btn {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: var(--radius);
   transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-hover);
 }
 
 .hero-image img {
@@ -83,10 +96,10 @@ body {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: var(--spacing);
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
